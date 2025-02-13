@@ -1,4 +1,4 @@
-package SortPackage;
+package SortAlgorithms;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ public class MergeSort {
         int[] a = new int[] {5, 8};
         int[] b = new int[] {-1, 6};
 
-        merge(a, b);
+        System.out.println(Arrays.toString(merge(a, b)));
     }
 
     public static int[] merge(int[] a, int[] b){
