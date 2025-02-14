@@ -2,7 +2,7 @@ package SortAlgorithms;
 
 import java.util.Arrays;
 
-// 1 версия
+// 2.0 version
 public class CombSort {
     public static void main(String[] args) {
         int[] n = new int[] {4, 1, 9, -4, 7, 1, 0, -23};
