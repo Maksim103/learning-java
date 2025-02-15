@@ -4,10 +4,22 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args){
-        int[] a = new int[] {1, 5};
-        int[] b = new int[] {2, 4};
+        int[] n = new int[] {-31, 552, 124, -481, 12, -1, 0, 2235, 1, 3};
 
-        System.out.println(Arrays.toString(merge(a, b)));
+        System.out.println(Arrays.toString(mergeSort(n)));
+    }
+
+    public static int[] mergeSort(int[] array) {
+        if (array.length < 2) {
+            return array;
+        }
+
+        int half = array.length/2;
+
+        int[] a = Arrays.copyOfRange(array, 0, half);
+        int[] b = Arrays.copyOfRange(array, half, array.length);
+
+        return merge(mergeSort(a), mergeSort(b));
     }
 
     public static int[] merge(int[] a, int[] b){
