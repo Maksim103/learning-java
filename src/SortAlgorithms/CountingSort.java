@@ -2,7 +2,7 @@ package SortAlgorithms;
 
 import java.util.Arrays;
 
-public class СountingSort {
+public class CountingSort {
     public static void main(String[] args) {
         int[] n = new int[] {-31, 552, 124, -481, 12, -1, 0, 2235, 1, 3};
 
