@@ -6,6 +6,7 @@ public class MergeSort {
     public static void main(String[] args){
         int[] n = new int[] {-31, 552, 124, -481, 12, -1, 0, 2235, 1, 3};
 
+        System.out.println("Сортировка слиянием");
         System.out.println(Arrays.toString(mergeSort(n)));
     }
 
