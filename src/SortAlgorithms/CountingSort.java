@@ -6,6 +6,11 @@ import java.util.Arrays;
  * Counting Sorting is an algorithm without comparison.
  * The main idea of the algorithm is to calculate how many times each element occurs in the array,
  * and then fill the source array with the results of this calculation.
+ *
+ * Sorting by counting works best in these conditions:
+ * the array is very large — there are many values in it;
+ * these values are in a range known to us;
+ * the range is much smaller than the size of the array, which means that data units can be repeated.
  */
 public class CountingSort {
     public static void main(String[] args) {
