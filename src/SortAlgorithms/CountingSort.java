@@ -12,20 +12,32 @@ import java.util.Arrays;
  *     <li>these values are in a range known to us;</li>
  *     <li>the range is much smaller than the size of the array, which means that data units can be repeated.</li>
  * </ul>
-
  */
 public class CountingSort {
     public static void main(String[] args) {
-        int[] n = new int[] {-31, 552, 124, -481, 12, -1, 0, 2235, 1, 3};
+        int[] n = new int[] {45, 12, 53, 22, 5, 1, 99, 5, 2, 1, 12}; // numbers do not exceed one hundred
 
         System.out.println("Сортировка подсчётом");
-        System.out.println(Arrays.toString(sort(n)));
+        System.out.println(Arrays.toString(sort(n, 100)));
     }
 
-    public static int[] sort(int[] array) {
+    public static int[] sort(int[] array, int max) {
         int[] result = new int[array.length];
+        int[] supportArray = new int[max];
 
+        for (int value : array) {
+            supportArray[value]++;
+        }
 
+        int k = 0;
+        for (int i = 0; i < max; i++) {
+            if (supportArray[i] > 0) {
+                for (int j = 0; j < supportArray[i]; j++) {
+                    result[k] = i;
+                    k++;
+                }
+            }
+        }
 
         return result;
     }
