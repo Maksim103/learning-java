@@ -1,9 +1,9 @@
 public class RobotTask {
     public static void main(String[] args) {
-        int toX = -14;
-        int toY = 5;
         Robot robot = new Robot(-22, 65, Direction.UP);
 
+        int toX = -14;
+        int toY = 5;
         Robot.moveRobot(robot, toX, toY);
 
         System.out.println(robot.getX() + " - x");
@@ -44,7 +44,7 @@ class Robot {
     }
 
     public void stepForward() {
-        if (dir == Direction.UP)    {y++;}
+        if      (dir == Direction.UP)    {y++;}
         else if (dir == Direction.DOWN)  {y--;}
         else if (dir == Direction.LEFT)  {x--;}
         else if (dir == Direction.RIGHT) {x++;}
