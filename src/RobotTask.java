@@ -45,9 +45,9 @@ class Robot {
 
     public void stepForward() {
         if (dir == Direction.UP)    {y++;}
-        if (dir == Direction.DOWN)  {y--;}
-        if (dir == Direction.LEFT)  {x--;}
-        if (dir == Direction.RIGHT) {x++;}
+        else if (dir == Direction.DOWN)  {y--;}
+        else if (dir == Direction.LEFT)  {x--;}
+        else if (dir == Direction.RIGHT) {x++;}
     }
 
     public static void moveRobot(Robot robot, int toX, int toY) {
