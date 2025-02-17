@@ -1,8 +1,8 @@
 public class RobotTask {
     public static void main(String[] args) {
-        int toX = 3;
-        int toY = 0;
-        Robot robot = new Robot(0, 0, Direction.UP);
+        int toX = -14;
+        int toY = 5;
+        Robot robot = new Robot(-22, 65, Direction.UP);
 
         Robot.moveRobot(robot, toX, toY);
 
@@ -51,7 +51,32 @@ class Robot {
     }
 
     public static void moveRobot(Robot robot, int toX, int toY) {
-        // your code
+        if (robot.getX() == toX && robot.getY() == toY)
+            return;
+
+        int startX = robot.getX();
+        int startY = robot.getY();
+        Direction toDirectionX = Direction.RIGHT;
+        Direction toDirectionY = Direction.UP;
+
+        if (toX < startX)  toDirectionX = Direction.LEFT;
+        if (toY < startY)  toDirectionY = Direction.DOWN;
+
+        while (robot.getDirection() != toDirectionX) {
+            robot.turnRight();
+        }
+
+        for (int i = 0; i < Math.abs(toX-startX); i++) {
+            robot.stepForward();
+        }
+
+        while (robot.getDirection() != toDirectionY) {
+            robot.turnRight();
+        }
+
+        for (int i = 0; i < Math.abs(toY-startY); i++) {
+            robot.stepForward();
+        }
     }
 }
 
