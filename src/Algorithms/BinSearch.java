@@ -1,5 +1,7 @@
 package Algorithms;
 
+import java.util.Random;
+
 public class BinSearch {
     public static void main(String[] args) {
         int[] numberArray = new int[] {
@@ -13,8 +15,16 @@ public class BinSearch {
                 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96,
                 97, 98, 99, 100
         };
+        int target = getRandomNumber(numberArray);
+        System.out.println(target + " - target");
 
-        System.out.println(binarySearch(numberArray, 68));
+        System.out.println(binarySearch(numberArray, target));
+    }
+
+    public static int getRandomNumber(int[] array) {
+        int randomIndex = new Random().nextInt(array.length);
+
+        return array[randomIndex];
     }
 
     public static int binarySearch(int[] array, int targetNumber) {
