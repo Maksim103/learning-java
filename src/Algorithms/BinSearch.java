@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class BinSearch {
     public static void main(String[] args) {
         int[] numberArray = new int[] {

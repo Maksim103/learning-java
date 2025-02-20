@@ -1,3 +1,5 @@
+package Tasks;
+
 public class RobotTask {
     public static void main(String[] args) {
         Robot robot = new Robot(-22, 65, Direction.UP);
@@ -62,11 +64,6 @@ class Robot {
         if (toY < startY)  toDirectionY = Direction.DOWN;
 
         int shortPathX = calculatePathForTurn(robot.getDirection(), toDirectionX);
-
-
-
-
-
 
 
 
