@@ -63,11 +63,6 @@ class Robot {
         if (toX < startX)  toDirectionX = Direction.LEFT;
         if (toY < startY)  toDirectionY = Direction.DOWN;
 
-        int shortPathX = calculatePathForTurn(robot.getDirection(), toDirectionX);
-
-
-
-        /*  Not Optimized
         while (robot.getDirection() != toDirectionX) {
             robot.turnRight();
         }
@@ -83,14 +78,6 @@ class Robot {
         for (int i = 0; i < Math.abs(toY-startY); i++) {
             robot.stepForward();
         }
-        */
-    }
-
-    private static int calculatePathForTurn(Direction currentDirection, Direction targetDirection) {
-        System.out.println(currentDirection.ordinal());
-        System.out.println(targetDirection.ordinal());
-
-        return 0;
     }
 }
 
