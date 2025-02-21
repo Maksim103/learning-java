@@ -9,7 +9,13 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public String toString() {
-        return "";
+        StringBuilder result = new StringBuilder(bytes.length);
+
+        for (byte item: bytes) {
+            result.append((char) item);
+        }
+
+        return result.toString();
     }
 
     @Override
