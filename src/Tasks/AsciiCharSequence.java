@@ -30,14 +30,14 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        byte[] bytesArray = new byte[end-start];
+        byte[] result = new byte[end-start];
 
         int k = 0;
         for (int i = start; i < end; i++) {
-            bytesArray[k] = bytes[i];
+            result[k] = bytes[i];
             k++;
         }
 
-        return new AsciiCharSequence(bytesArray);
+        return new AsciiCharSequence(result);
     }
 }
