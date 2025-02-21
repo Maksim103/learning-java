@@ -4,7 +4,7 @@ public class AsciiCharSequence implements CharSequence {
     private final byte[] bytes;
 
     public AsciiCharSequence(byte[] bytes) {
-        this.bytes = bytes;
+        this.bytes = bytes.clone();
     }
 
     @Override
