@@ -14,6 +14,6 @@ public class SpamAnalyzer extends KeywordAnalyzer {
 
     @Override
     protected Label getLabel() {
-        return null;
+        return Label.SPAM;
     }
 }
