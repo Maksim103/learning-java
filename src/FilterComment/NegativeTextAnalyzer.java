@@ -4,7 +4,7 @@ public class NegativeTextAnalyzer extends KeywordAnalyzer {
 
     @Override
     protected String[] getKeywords() {
-        return new String[0];
+        return keywords;
     }
 
     @Override
