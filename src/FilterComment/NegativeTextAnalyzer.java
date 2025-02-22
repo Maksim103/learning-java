@@ -9,6 +9,6 @@ public class NegativeTextAnalyzer extends KeywordAnalyzer {
 
     @Override
     protected Label getLabel() {
-        return null;
+        return Label.NEGATIVE_TEXT;
     }
 }
