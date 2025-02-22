@@ -9,7 +9,7 @@ public class SpamAnalyzer extends KeywordAnalyzer {
 
     @Override
     protected String[] getKeywords() {
-        return new String[0];
+        return keywords;
     }
 
     @Override
