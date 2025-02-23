@@ -31,3 +31,4 @@ bin/
 .DS_Store
 /src/StepikTest.java
 /out/
+/src/FilterComment/Test.java
