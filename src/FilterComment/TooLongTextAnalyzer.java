@@ -9,6 +9,10 @@ public class TooLongTextAnalyzer implements TextAnalyzer {
 
     @Override
     public Label processText(String text) {
-        return null;
+        if (text.length() > maxLength) {
+            return Label.SPAM;
+        } else {
+            return Label.OK;
+        }
     }
 }
