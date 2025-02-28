@@ -1,4 +1,4 @@
-package Robot;
+package RobotTask;
 
 enum Direction {
     UP,

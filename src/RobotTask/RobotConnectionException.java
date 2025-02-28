@@ -1,4 +1,4 @@
-package Robot;
+package RobotTask;
 
 public class RobotConnectionException extends RuntimeException {
 

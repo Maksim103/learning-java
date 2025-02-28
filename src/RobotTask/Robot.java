@@ -1,4 +1,4 @@
-package Robot;
+package RobotTask;
 
 class Robot {
     int x;
