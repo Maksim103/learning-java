@@ -1,17 +1,4 @@
-package Tasks;
-
-public class RobotTask {
-    public static void main(String[] args) {
-        Robot robot = new Robot(-22, 65, Direction.UP);
-
-        int toX = -14;
-        int toY = 5;
-        Robot.moveRobot(robot, toX, toY);
-
-        System.out.println(robot.getX() + " - x");
-        System.out.println(robot.getY() + " - y");
-    }
-}
+package RobotTask;
 
 class Robot {
     int x;
@@ -79,11 +66,4 @@ class Robot {
             robot.stepForward();
         }
     }
-}
-
-enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
 }
