@@ -41,6 +41,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/src/StepikTest.java
+/maven-project-demo/src/main/java/org/example/StepikTest.java
 /out/
 /maven-project-demo/src/main/java/org/example/FilterComment/Test.java
