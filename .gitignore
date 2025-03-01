@@ -5,6 +5,18 @@ out/
 /.idea/
 !/out/
 
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -31,4 +43,4 @@ bin/
 .DS_Store
 /src/StepikTest.java
 /out/
-/src/FilterComment/Test.java
+/maven-project-demo/src/main/java/org/example/FilterComment/Test.java
