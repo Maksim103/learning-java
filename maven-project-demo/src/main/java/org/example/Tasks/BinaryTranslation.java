@@ -2,6 +2,13 @@ package org.example.Tasks;
 
 import java.util.Scanner;
 
+/*
+
+5+124-23*1*9
++-4232-44
+
+*/
+
 public class BinaryTranslation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
