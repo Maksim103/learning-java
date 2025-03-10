@@ -1,5 +1,14 @@
 package org.example.Tasks;
 
+/*
+
+А роза упала на лапу азора - true
+Madam, I'm Adam! - true
+Аргентина манит негра - true
+ttt 4t tt - true
+
+*/
+
 public class Palindrome {
     public static void main(String[] args)
     {
@@ -7,11 +16,16 @@ public class Palindrome {
     }
 
     public static boolean isPalindrome(String text) {
-        String result = text.replaceAll("[^a-zA-Z0-9]", "");
+        int n = text.length();
+        boolean flag = true;
 
-        StringBuilder resultReverse = new StringBuilder(result);
-        resultReverse.reverse();
+        for (int i = 0; i < n; i++) {
+            if (text.charAt(i) != text.charAt(n-1-i)) {
+                flag = false;
+                break;
+            }
+        }
 
-        return result.equalsIgnoreCase(resultReverse.toString());
+        return flag;
     }
 }
