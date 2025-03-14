@@ -1,6 +1,6 @@
 package org.example.RobotTask;
 
-enum Direction {
+public enum Direction {
     UP,
     DOWN,
     LEFT,
