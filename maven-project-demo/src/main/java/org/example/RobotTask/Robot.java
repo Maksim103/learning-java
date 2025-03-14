@@ -1,6 +1,6 @@
 package org.example.RobotTask;
 
-class Robot {
+public class Robot {
     int x;
     int y;
     Direction dir;
