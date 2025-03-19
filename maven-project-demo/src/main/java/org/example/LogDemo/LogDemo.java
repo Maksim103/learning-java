@@ -21,7 +21,7 @@ public class LogDemo {
 
     private static void randomlyFailingAlgorithm() {
         double randomNumber = Math.random();
-        LOGGER.log(Level.FINE, "Generate random number");
+        LOGGER.log(Level.FINE, "Generate random number {0}", randomNumber);
 
         if (randomNumber < 0.5) {
             throw new IllegalStateException("Invalid number");
