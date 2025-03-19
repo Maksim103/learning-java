@@ -42,4 +42,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 /out/
+
 /maven-project-demo/src/main/java/org/example/StepikTask.java
