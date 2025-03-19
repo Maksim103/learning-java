@@ -20,7 +20,5 @@ class MainTest {
     @Test
     public void shouldThrowRobotConnectionExceptionWhenMoveRobot() {
         Robot robot = new Robot(0, 0, Direction.UP);
-
-
     }
 }
