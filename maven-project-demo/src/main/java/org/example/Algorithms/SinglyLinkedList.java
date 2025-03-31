@@ -14,6 +14,10 @@ public class SinglyLinkedList {
         nodeTwo.next = nodeThree;
         nodeThree.next = nodeFour;
 
+        Node.insertAtStart(new Node(7), head);
+        Node.insertAtEnd(new Node(1010), head);
+        Node.insertAfterNode(new Node(129494), head, 0);
+
         Node currentNode = head;
 
         while (currentNode != null) {
