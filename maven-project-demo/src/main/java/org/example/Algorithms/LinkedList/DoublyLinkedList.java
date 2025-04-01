@@ -57,4 +57,19 @@ class DoublyNode {
 
         System.out.println();
     }
+
+    public static DoublyNode insertAtStart(DoublyNode newNode, DoublyNode head) {
+        if (head == null) {
+            head = newNode;
+        } else {
+            DoublyNode oldHead = head;
+
+            head = newNode;
+            oldHead.prev = head;
+            head.next = oldHead;
+        }
+
+        return head;
+    }
+
 }
