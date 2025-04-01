@@ -6,6 +6,7 @@ public class Main {
 
         int toX = -14;
         int toY = 5;
+
         Robot.moveRobot(robot, toX, toY);
 
         System.out.println(robot.getX() + " - x");
