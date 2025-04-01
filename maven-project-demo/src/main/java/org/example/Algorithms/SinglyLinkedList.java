@@ -95,4 +95,13 @@ class Node {
         currentNode.next = currentNode.next.next;
         return head;
     }
+
+    public static void printLinkedList(Node head) {
+        Node currentNode = head;
+
+        while (currentNode != null) {
+            System.out.print(currentNode.data + " ");
+            currentNode = currentNode.next;
+        }
+    }
 }
