@@ -19,6 +19,9 @@ public class DoublyLinkedList {
         nodeThree.prev = nodeTwo;
 
         nodeFour.prev = nodeThree;
+
+        DoublyNode.printLinkedListFromHead(head);
+        DoublyNode.printLinkedListFromTail(tail);
     }
 }
 
@@ -31,5 +34,27 @@ class DoublyNode {
         this.data = data;
         this.next = null;
         this.prev = null;
+    }
+
+    public static void printLinkedListFromHead(DoublyNode head) {
+        DoublyNode currentNode = head;
+
+        while (currentNode != null) {
+            System.out.print(currentNode.data + " ");
+            currentNode = currentNode.next;
+        }
+
+        System.out.println();
+    }
+
+    public static void printLinkedListFromTail(DoublyNode tail) {
+        DoublyNode currentNode = tail;
+
+        while (currentNode != null) {
+            System.out.print(currentNode.data + " ");
+            currentNode = currentNode.prev;
+        }
+
+        System.out.println();
     }
 }
