@@ -1,5 +1,7 @@
 package org.example.Algorithms.LinkedList;
 
+import org.w3c.dom.Node;
+
 public class DoublyLinkedList {
     public static void main(String[] args) {
         DoublyNode nodeOne = new DoublyNode(1);
@@ -20,8 +22,17 @@ public class DoublyLinkedList {
 
         nodeFour.prev = nodeThree;
 
+        System.out.println("----------------------------------");
+
         DoublyNode.printLinkedListFromHead(head);
         DoublyNode.printLinkedListFromTail(tail);
+
+        System.out.println("----------------------------------");
+
+        DoublyNode.insertAtStart(new DoublyNode(9), head);
+        DoublyNode.insertAtEnd(new DoublyNode(-2), tail);
+        DoublyNode.insertAfterNode(new DoublyNode(34), head, 1);
+        DoublyNode.printLinkedListFromHead(head);
     }
 }
 
