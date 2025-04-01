@@ -11,18 +11,4 @@ public class Main {
         System.out.println(robot.getX() + " - x");
         System.out.println(robot.getY() + " - y");
     }
-
-    public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
-
-        for (int i = 0; i < 3; i++) {
-            try {
-                RobotConnection robotConnection = robotConnectionManager.getConnection();
-                robotConnection.moveRobotTo(toX, toY);
-
-                robotConnection.close();
-            } catch (RobotConnectionException e) {
-                robotConnectionManager.getConnection().close();
-            }
-        }
-    }
 }
