@@ -106,4 +106,14 @@ class Node {
             currentNode = currentNode.next;
         }
     }
+
+    public static Node searchNodeInLinkedList(Node head, int searchValue) {
+        Node currentNode = head;
+
+        while (currentNode != null && currentNode.data != searchValue) {
+            currentNode = currentNode.next;
+        }
+
+        return currentNode;
+    }
 }
