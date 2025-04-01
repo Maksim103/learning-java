@@ -105,6 +105,8 @@ class Node {
             System.out.print(currentNode.data + " ");
             currentNode = currentNode.next;
         }
+
+        System.out.println();
     }
 
     public static Node searchNodeInLinkedList(Node head, int searchValue) {
