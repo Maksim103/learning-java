@@ -67,4 +67,32 @@ class Node {
 
         return head;
     }
+
+    public static Node deleteAtFirst(Node head) {
+        head = head.next;
+
+        return head;
+    }
+
+    public static Node deleteAtLast(Node head) {
+        Node currentNode = head;
+
+        while (currentNode.next.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = null;
+        return head;
+    }
+
+    public static Node deleteAfterNode(Node head, int index) {
+        Node currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = currentNode.next.next;
+        return head;
+    }
 }
