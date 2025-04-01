@@ -72,4 +72,17 @@ class DoublyNode {
         return head;
     }
 
+    public static DoublyNode insertAtEnd(DoublyNode newNode, DoublyNode tail) {
+        if (tail == null) {
+            tail = newNode;
+        } else {
+            DoublyNode oldTail = tail;
+
+            tail = newNode;
+            oldTail.next = tail;
+            tail.prev = oldTail;
+        }
+
+        return tail;
+    }
 }
