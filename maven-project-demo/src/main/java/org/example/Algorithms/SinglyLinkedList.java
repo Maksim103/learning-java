@@ -26,6 +26,8 @@ public class SinglyLinkedList {
         Node.deleteAfterNode(head, 2);
 
         Node.printLinkedList(head);
+
+        System.out.println(Node.searchNodeInLinkedList(head, 4).data);
     }
 }
 
