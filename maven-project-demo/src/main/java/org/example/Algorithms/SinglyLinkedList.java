@@ -18,12 +18,14 @@ public class SinglyLinkedList {
         Node.insertAtEnd(new Node(1010), head);
         Node.insertAfterNode(new Node(129494), head, 0);
 
-        Node currentNode = head;
+        Node.printLinkedList(head);
+        System.out.println("-------------------------");
 
-        while (currentNode != null) {
-            System.out.println(currentNode.data + " - data");
-            currentNode = currentNode.next;
-        }
+        Node.deleteAtFirst(head);
+        Node.deleteAtLast(head);
+        Node.deleteAfterNode(head, 2);
+
+        Node.printLinkedList(head);
     }
 }
 
