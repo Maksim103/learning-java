@@ -85,4 +85,19 @@ class DoublyNode {
 
         return tail;
     }
+
+    public static DoublyNode insertAfterNode(DoublyNode newNode, DoublyNode head, int index) {
+        DoublyNode currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        newNode.next = currentNode.next;
+        newNode.prev = currentNode;
+        currentNode.next.prev = newNode;
+        currentNode.next = newNode;
+
+        return head;
+    }
 }
