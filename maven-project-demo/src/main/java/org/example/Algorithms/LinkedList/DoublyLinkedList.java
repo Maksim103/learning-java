@@ -33,6 +33,13 @@ public class DoublyLinkedList {
         DoublyNode.insertAtEnd(new DoublyNode(-2), tail);
         DoublyNode.insertAfterNode(new DoublyNode(34), head, 1);
         DoublyNode.printLinkedListFromHead(head);
+
+        System.out.println("----------------------------------");
+
+        DoublyNode.deleteAtFirst(head);
+        DoublyNode.deleteAtLast(head);
+        DoublyNode.deleteAfterNode(head, 2);
+        DoublyNode.printLinkedListFromHead(head);
     }
 }
 
