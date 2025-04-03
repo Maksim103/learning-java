@@ -111,4 +111,36 @@ class DoublyNode {
 
         return head;
     }
+
+    public static DoublyNode deleteAtFirst(DoublyNode head) {
+        head = head.next;
+        head.prev = null;
+
+        return head;
+    }
+
+    public static DoublyNode deleteAtLast(DoublyNode head) {
+        DoublyNode currentNode = head;
+
+        while (currentNode.next.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = null;
+        return currentNode;
+    }
+
+    public static DoublyNode deleteAfterNode(DoublyNode head, int index) {
+        DoublyNode currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        DoublyNode temp = currentNode.next.next;
+        currentNode.next = temp;
+        temp.prev.prev = currentNode;
+
+        return head;
+    }
 }
