@@ -43,4 +43,4 @@ bin/
 .DS_Store
 /out/
 
-/maven-project-demo/src/main/java/org/example/StepikTask.java
+/maven-project-demo/src/main/java/org/example/StepikTasks/
