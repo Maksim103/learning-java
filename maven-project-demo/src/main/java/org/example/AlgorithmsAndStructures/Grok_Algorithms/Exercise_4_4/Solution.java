@@ -1,4 +1,4 @@
-package org.example.Algorithms.Grok_Algorithms.Exercise_4_4;
+package org.example.AlgorithmsAndStructures.Grok_Algorithms.Exercise_4_4;
 
 /*
 Написать рекурсивную функцию binSearch

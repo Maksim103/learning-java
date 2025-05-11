@@ -1,6 +1,4 @@
-package org.example.Algorithms.LinkedList;
-
-import org.w3c.dom.Node;
+package org.example.AlgorithmsAndStructures.LinkedList;
 
 public class DoublyLinkedList {
     public static void main(String[] args) {

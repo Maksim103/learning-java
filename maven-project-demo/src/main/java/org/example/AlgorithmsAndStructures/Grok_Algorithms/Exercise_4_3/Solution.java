@@ -1,4 +1,4 @@
-package org.example.Algorithms.Grok_Algorithms.Exercise_4_3;
+package org.example.AlgorithmsAndStructures.Grok_Algorithms.Exercise_4_3;
 
 /*
 Написать рекурсивную функцию maxElement

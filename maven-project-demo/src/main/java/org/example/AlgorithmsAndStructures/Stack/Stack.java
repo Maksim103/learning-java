@@ -1,4 +1,4 @@
-package org.example.Algorithms.Stack;
+package org.example.AlgorithmsAndStructures.Stack;
 
 public class Stack {
     private int size;

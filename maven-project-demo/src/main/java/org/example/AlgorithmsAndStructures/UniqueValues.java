@@ -1,4 +1,4 @@
-package org.example.Algorithms;
+package org.example.AlgorithmsAndStructures;
 
 import java.util.Scanner;
 

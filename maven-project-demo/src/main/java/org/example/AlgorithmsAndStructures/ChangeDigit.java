@@ -1,4 +1,4 @@
-package org.example.Algorithms;
+package org.example.AlgorithmsAndStructures;
 
 public class ChangeDigit {
 

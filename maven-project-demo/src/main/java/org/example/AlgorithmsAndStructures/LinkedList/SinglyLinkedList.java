@@ -1,4 +1,4 @@
-package org.example.Algorithms.LinkedList;
+package org.example.AlgorithmsAndStructures.LinkedList;
 
 public class SinglyLinkedList {
     public static void main(String[] args) {

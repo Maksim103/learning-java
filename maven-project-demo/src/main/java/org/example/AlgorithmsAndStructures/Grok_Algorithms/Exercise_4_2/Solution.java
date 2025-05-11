@@ -1,4 +1,4 @@
-package org.example.Algorithms.Grok_Algorithms.Exercise_4_2;
+package org.example.AlgorithmsAndStructures.Grok_Algorithms.Exercise_4_2;
 
 /*
 Написать рекурсивную функцию countingElements
