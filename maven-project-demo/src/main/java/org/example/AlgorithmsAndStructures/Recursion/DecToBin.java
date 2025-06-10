@@ -10,7 +10,7 @@ public class DecToBin {
             return result.toString();
         }
 
-        result.append(value%2);
+        result.insert(0,value%2);
         return decToBin(value/2, result);
     }
 
