@@ -2,7 +2,6 @@ package org.example.Tasks;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class PrintTextPerRole {
@@ -25,7 +24,7 @@ public class PrintTextPerRole {
     }
 
     private static String print(String[] roles, String[] textLines) {
-        Map<String, List<String>> dict = new HashMap<>();
+        Map<String, ArrayList<String>> dict = new HashMap<>();
 
         for (String role : roles) {
             if (!dict.containsKey(role)) {
