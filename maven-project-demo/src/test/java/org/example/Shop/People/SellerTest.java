@@ -39,8 +39,8 @@ class SellerTest {
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 20, ProductType.FOOD);
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         Shopper shopper = new Shopper("Maks", 18, GenderType.Man, 8000);
 
