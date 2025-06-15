@@ -16,8 +16,8 @@ class ShopTest {
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 7, ProductType.FOOD);
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         assertEquals(11, magnit.getAllProducts().size());
         assertTrue(magnit.getAllProducts().contains(iphone));
@@ -29,8 +29,8 @@ class ShopTest {
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 7, ProductType.FOOD);
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         assertEquals(iphone, magnit.getProductById(1));
         assertEquals(apple, magnit.getProductById(2));
@@ -47,8 +47,8 @@ class ShopTest {
             product[i] = apple;
         }
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         Object[] productsShop = magnit.getProductsByType(ProductType.FOOD).toArray();
 
@@ -61,8 +61,8 @@ class ShopTest {
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 7, ProductType.FOOD);
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         magnit.removeProductById(1);
 
@@ -76,8 +76,8 @@ class ShopTest {
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 7, ProductType.FOOD);
 
-        magnit.addProducts(iphone);
-        magnit.addProducts(apple);
+        magnit.addAllProducts(iphone);
+        magnit.addAllProducts(apple);
 
         magnit.removeAllProductsById(2);
 
