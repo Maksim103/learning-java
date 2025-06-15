@@ -76,13 +76,14 @@ public class Shop implements Building {
     }
 
     public int countProductInShop(Product shopProduct) {
+        int count = 0;
         for (Product product : products) {
             if (product.getId() == shopProduct.getId()) {
-                return product.getQuantity();
+                count++;
             }
         }
 
-        return 0;
+        return count;
     }
 
     public Shop(String name) {
