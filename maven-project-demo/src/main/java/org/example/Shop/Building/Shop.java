@@ -26,7 +26,7 @@ public class Shop implements Building {
         return products;
     }
 
-    public void addProducts(Product product) {
+    public void addAllProducts(Product product) {
         while (product.getQuantity() != 0) {
             products.add(product);
             product.reduceQuantity();
