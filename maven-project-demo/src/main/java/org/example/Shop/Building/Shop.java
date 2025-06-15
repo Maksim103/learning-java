@@ -63,6 +63,17 @@ public class Shop implements Building {
         }
     }
 
+    public void removeAllProductsById(int id) {
+        Iterator<Product> iterator = products.iterator();
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getId() == id) {
+                iterator.remove();
+            }
+        }
+    }
+
     public int countProductInShop(Product shopProduct) {
         for (Product product : products) {
             if (product.getId() == shopProduct.getId()) {
