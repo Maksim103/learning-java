@@ -4,6 +4,7 @@ import org.example.Shop.Products.Product;
 import org.example.Shop.Products.ProductType;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Shop implements Building {
