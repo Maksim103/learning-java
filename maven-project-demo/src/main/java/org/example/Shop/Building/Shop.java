@@ -4,6 +4,7 @@ import org.example.Shop.Products.Product;
 import org.example.Shop.Products.ProductType;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Shop implements Building {
@@ -25,7 +26,7 @@ public class Shop implements Building {
         return products;
     }
 
-    public void addProducts(Product product) {
+    public void addAllProducts(Product product) {
         while (product.getQuantity() != 0) {
             products.add(product);
             product.reduceQuantity();
@@ -63,14 +64,26 @@ public class Shop implements Building {
         }
     }
 
+    public void removeAllProductsById(int id) {
+        Iterator<Product> iterator = products.iterator();
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getId() == id) {
+                iterator.remove();
+            }
+        }
+    }
+
     public int countProductInShop(Product shopProduct) {
+        int count = 0;
         for (Product product : products) {
             if (product.getId() == shopProduct.getId()) {
-                return product.getQuantity();
+                count++;
             }
         }
 
-        return 0;
+        return count;
     }
 
     public Shop(String name) {

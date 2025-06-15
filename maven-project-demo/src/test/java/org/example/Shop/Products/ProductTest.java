@@ -28,4 +28,12 @@ class ProductTest {
         assertNotEquals(p1, p2);
     }
 
+    @Test
+    void testHashCode() {
+        Product p1 = new Product(1, "Laptop", 1500.0, 10, ProductType.ELECTRONICS);
+        Product p2 = new Product(1, "Laptop", 1500.0, 10, ProductType.CLOTHING);
+
+        assertNotEquals(p1.hashCode(), p2.hashCode());
+    }
+
 }

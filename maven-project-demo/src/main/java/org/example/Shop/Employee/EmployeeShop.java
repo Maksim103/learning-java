@@ -101,7 +101,7 @@ public abstract class EmployeeShop extends Person implements Employee {
     public void workExtra(int extraHours) {
         if (isWorked()) {
             extraWorkingHours += extraHours;
-            System.out.println(getName() + " работал ещё " + extraHours + " дополнительно! \n");
+            System.out.println(getName() + " работал ещё " + extraHours + " дополнительно!");
         }
         else {
             work(extraHours);

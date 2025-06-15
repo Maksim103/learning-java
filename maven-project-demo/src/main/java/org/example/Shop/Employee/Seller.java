@@ -32,7 +32,7 @@ public class Seller extends EmployeeShop {
 
     private void sellProduct(Product product) {
         salesCount++;
-        product.reduceQuantity();
+        getShop().removeProductById(product.getId());
 
         System.out.println(getName() + " продал " + product.getName() + "! Всего продаж: " + salesCount);
     }
