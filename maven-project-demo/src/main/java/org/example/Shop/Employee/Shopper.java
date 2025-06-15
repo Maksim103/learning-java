@@ -131,9 +131,8 @@ public class Shopper extends Person {
 
     public void viewListProducts() {
         for (Product product : products) {
-            System.out.print(product + " ");
+            System.out.println(product);
         }
-        System.out.println();
     }
 
     public ArrayList<Product> getAllProducts() {
