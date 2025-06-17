@@ -1,4 +1,4 @@
-package org.example.Tasks;
+package org.example.AlgorithmsAndStructures.Queue;
 
 import java.util.ArrayList;
 import java.util.Scanner;
