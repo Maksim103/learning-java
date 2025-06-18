@@ -7,10 +7,13 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
+import java.text.MessageFormat;
 
 public class Calculator {
     public static void main(String[] args) {
-        String pathParent = "C:\\Users\\Leon\\Desktop\\Java_jobs\\Learning\\maven-project-demo\\src\\main\\java\\org\\example\\Tasks\\CalculatorTask\\";
+        String separator = File.separator;
+        String pathParent = MessageFormat.format("C:{0}Users{0}Leon{0}Desktop{0}Java_jobs{0}Learning{0}maven-project-demo{0}src{0}main{0}java{0}org{0}example{0}Tasks{0}CalculatorTask{0}",
+                separator);
         String outputPathFile = pathParent + "output.txt";
         clearFile(outputPathFile);
 
