@@ -1,6 +1,6 @@
 package org.example.AlgorithmsAndStructures.LinkedList;
 
-public class SinglyLinkedList {
+public class SinglyLinkedListExample {
     public static void main(String[] args) {
         SynglyNode nodeOne = new SynglyNode(1);
         SynglyNode nodeTwo = new SynglyNode(2);
