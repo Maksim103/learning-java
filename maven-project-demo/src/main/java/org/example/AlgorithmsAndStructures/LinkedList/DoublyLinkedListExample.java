@@ -1,6 +1,6 @@
 package org.example.AlgorithmsAndStructures.LinkedList;
 
-public class DoublyLinkedList {
+public class DoublyLinkedListExample {
     public static void main(String[] args) {
         DoublyNode nodeOne = new DoublyNode(1);
         DoublyNode nodeTwo = new DoublyNode(2);
