@@ -67,14 +67,12 @@ public class Shopper extends Person {
         }
 
         if (!checkProductInShop(product)) {
-            System.out.println(product.getName() + " нет в магазине " + shop.getName());
-            return;
+            throw new ProductNotInShopException(product.getName() + " нет в магазине " + shop.getName());
         }
 
         if (countProductInShop(product) < countProduct) {
-            System.out.println(product.getName() + " в кол-ве " + countProduct + " нет!");
             System.out.println("В магазине " + shop.getName() + " только " + countProductInShop(product) + " " + product.getName());
-            return;
+            throw new ProductNotInShopException(product.getName() + " в кол-ве " + countProduct + " нет!");
         }
 
         if ((int) Math.round(product.getPrice()*countProduct) <= money) {
