@@ -3,7 +3,8 @@ package org.example.Shop.Employee;
 import org.example.Shop.Building.Shop;
 import org.example.Shop.People.GenderType;
 import org.example.Shop.Products.Product;
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Seller extends EmployeeShop {
     private int salesCount;
@@ -22,19 +23,25 @@ public class Seller extends EmployeeShop {
             return;
         }
 
-        ArrayList<Product> shopperProducts = shopper.getAllProducts();
+        Map<Product, Integer> shopperProducts = shopper.getAllProducts();
+        Iterator<Map.Entry<Product, Integer>> iterator = shopperProducts.entrySet().iterator();
 
-        while (!shopperProducts.isEmpty()) {
-            sellProduct(shopperProducts.getFirst());
-            shopperProducts.removeFirst();
+        while (iterator.hasNext()) {
+            Map.Entry<Product, Integer> entry = iterator.next();
+            Product product = entry.getKey();
+            Integer countProduct = entry.getValue();
+
+            sellProduct(product, countProduct);
+            iterator.remove();
         }
     }
 
-    private void sellProduct(Product product) {
-        salesCount++;
+    private void sellProduct(Product product, int countProduct) {
+        salesCount += countProduct;
         getShop().removeProductById(product.getId());
 
-        System.out.println(getName() + " продал " + product.getName() + "! Всего продаж: " + salesCount);
+        System.out.println(getName() + " продал " + product.getName() + " " +
+                "в кол-ве " + countProduct + " шт.! Всего продаж: " + salesCount);
     }
 
     public int getSalesCount() {
