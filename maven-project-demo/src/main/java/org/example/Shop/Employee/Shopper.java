@@ -1,5 +1,8 @@
 package org.example.Shop.Employee;
 
+import org.example.Shop.Exceptions.NoMoneyException;
+import org.example.Shop.Exceptions.PersonNotInShopException;
+import org.example.Shop.Exceptions.ProductNotInShopException;
 import org.example.Shop.People.GenderType;
 import org.example.Shop.People.Person;
 import org.example.Shop.Products.Product;
