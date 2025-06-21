@@ -79,7 +79,7 @@ public class Shopper extends Person {
         if ((int) Math.round(product.getPrice()*countProduct) <= money) {
             money -= (int) Math.round(product.getPrice()*countProduct);
 
-            products.computeIfPresent(product, (k, v) -> v + countProduct);
+            products.computeIfPresent(product, (_, v) -> v + countProduct);
             products.putIfAbsent(product, countProduct);
         } else {
             System.out.println(getName() + " нехватает денег для покупки " + product.getName() + " в кол-ве " + countProduct);
