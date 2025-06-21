@@ -34,7 +34,12 @@ public class Main {
         System.out.println();
 
         securityGuard.work(13);
-        System.out.println(securityGuard.calculateSalary());
+
+        try {
+            System.out.println(securityGuard.calculateSalary());
+        } catch (NotWorkHoursException e) {
+            System.out.println(e.getMessage());
+        }
 
         securityGuard.work(2);
         securityGuard.workExtra(5);
