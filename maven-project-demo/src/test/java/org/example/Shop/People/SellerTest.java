@@ -3,6 +3,7 @@ package org.example.Shop.People;
 import org.example.Shop.Building.Shop;
 import org.example.Shop.Employee.Seller;
 import org.example.Shop.Employee.Shopper;
+import org.example.Shop.Exceptions.NotWorkHoursException;
 import org.example.Shop.Products.Product;
 import org.example.Shop.Products.ProductType;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,13 @@ class SellerTest {
         Seller seller = new Seller(magnit, "Igor", 25, GenderType.Man, 35_000, 10);
 
         seller.work(5);
-        double salary = seller.calculateSalary();
+        double salary = 0;
+
+        try {
+            salary = seller.calculateSalary();
+        } catch (NotWorkHoursException e) {
+            System.out.println(e.getMessage());
+        }
 
         assertEquals(0, salary);
     }
