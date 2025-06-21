@@ -1,6 +1,8 @@
 package org.example.Shop.Employee;
 
 import org.example.Shop.Building.Shop;
+import org.example.Shop.Exceptions.NotWorkHoursException;
+import org.example.Shop.Exceptions.PersonNotInShopException;
 import org.example.Shop.People.GenderType;
 import org.example.Shop.Products.Product;
 import java.util.Iterator;
