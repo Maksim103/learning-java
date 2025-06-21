@@ -9,11 +9,11 @@ public class Product {
     private double price;
     private int quantity;
 
-    public void reduceQuantity() {
-        if (quantity > 0 ) {
-            quantity--;
+    public void reduceQuantity(int count) {
+        if (quantity - count >= 0) {
+            quantity -= count;
         } else {
-            System.out.println("Недостаточно товара на складе!");
+            quantity = 0;
         }
     }
 

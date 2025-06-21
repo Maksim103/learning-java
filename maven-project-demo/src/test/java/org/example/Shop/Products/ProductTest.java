@@ -9,9 +9,9 @@ class ProductTest {
     @Test
     void testReduceQuantity() {
         Product product = new Product(1, "Apple", 20.0, 5, ProductType.FOOD);
-        product.reduceQuantity();
+        product.reduceQuantity(2);
 
-        assertEquals(4, product.getQuantity());
+        assertEquals(3, product.getQuantity());
     }
 
     @Test
