@@ -4,7 +4,7 @@ import org.example.Shop.Products.Product;
 import org.example.Shop.Products.ProductType;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,8 +19,8 @@ class ShopTest {
         magnit.addAllProducts(iphone);
         magnit.addAllProducts(apple);
 
-        assertEquals(11, magnit.getAllProducts().size());
-        assertTrue(magnit.getAllProducts().contains(iphone));
+        assertEquals(2, magnit.getAllProducts().size());
+        assertTrue(magnit.getAllProducts().containsKey(iphone));
     }
 
     @Test
@@ -41,18 +41,14 @@ class ShopTest {
         Shop magnit = new Shop("Magnit", 326.5);
         Product iphone = new Product(1, "Iphone", 5000, 4, ProductType.ELECTRONICS);
         Product apple = new Product(2, "Apple", 150, 7, ProductType.FOOD);
-
-        Object[] product = new Object[apple.getQuantity()];
-        for (int i = 0; i < apple.getQuantity(); i++) {
-            product[i] = apple;
-        }
+        Product egg = new Product(3, "Egg", 250, 14, ProductType.FOOD);
 
         magnit.addAllProducts(iphone);
         magnit.addAllProducts(apple);
+        magnit.addAllProducts(egg);
 
-        Object[] productsShop = magnit.getProductsByType(ProductType.FOOD).toArray();
-
-        assertEquals(Arrays.toString(productsShop), Arrays.toString(product));
+        Set<Product> productsShop = magnit.getProductsByType(ProductType.FOOD);
+        assertEquals(2, productsShop.size());
     }
 
     @Test
@@ -64,10 +60,11 @@ class ShopTest {
         magnit.addAllProducts(iphone);
         magnit.addAllProducts(apple);
 
-        magnit.removeProductById(1);
+        magnit.removeProductById(2, 5);
 
-        assertEquals(10, magnit.getAllProducts().size());
-        assertEquals(3, magnit.countProductInShop(iphone));
+        assertEquals(2, magnit.getAllProducts().size());
+        assertEquals(2, magnit.countProductInShop(apple));
+        assertEquals(0, magnit.getProductById(1).getQuantity());
     }
 
     @Test
@@ -81,7 +78,7 @@ class ShopTest {
 
         magnit.removeAllProductsById(2);
 
-        assertEquals(4, magnit.getAllProducts().size());
+        assertEquals(1, magnit.getAllProducts().size());
         assertEquals(0, magnit.countProductInShop(apple));
     }
 

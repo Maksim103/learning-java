@@ -87,26 +87,19 @@ public class Shopper extends Person {
     }
 
     private boolean checkProductInShop(Product product) {
-        ArrayList <Product> shopProducts = shop.getAllProducts();
-        for (Product shopProduct : shopProducts) {
-            if (product.getId() == shopProduct.getId()) {
-                return true;
-            }
-        }
-
-        return false;
+        Map<Product, Integer> shopProducts = shop.getAllProducts();
+        return shopProducts.containsKey(product);
     }
 
     private int countProductInShop(Product product) {
-        int count = 0;
-        ArrayList <Product> shopProducts = shop.getAllProducts();
-            for (Product shopProduct : shopProducts) {
+        Map<Product, Integer> shopProducts = shop.getAllProducts();
+            for (Product shopProduct : shopProducts.keySet()) {
                 if (product.getId() == shopProduct.getId()) {
-                    count++;
+                    return shopProducts.get(product);
                 }
             }
 
-        return count;
+        return 0;
     }
 
     public void removeProductById(int id) {

@@ -3,17 +3,14 @@ package org.example.Shop.Building;
 import org.example.Shop.Products.Product;
 import org.example.Shop.Products.ProductType;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Objects;
+import java.util.*;
 
 public class Shop implements Building {
     private String name;
     private String address;
     private double area;
     private boolean isOpen;
-
-    private final ArrayList<Product> products = new ArrayList<>();
+    private final Map<Product, Integer> products = new HashMap<>();
 
     {
         isOpen = true;
@@ -22,19 +19,19 @@ public class Shop implements Building {
         area = 0;
     }
 
-    public ArrayList<Product> getAllProducts() {
+    public Map<Product, Integer> getAllProducts() {
         return products;
     }
 
     public void addAllProducts(Product product) {
-        while (product.getQuantity() != 0) {
-            products.add(product);
-            product.reduceQuantity();
-        }
+        products.putIfAbsent(product, product.getQuantity());
+        product.reduceQuantity(product.getQuantity());
+
+        products.computeIfPresent(product, (_, v) -> v + product.getQuantity());
     }
 
     public Product getProductById(int id) {
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             if (product.getId() == id) {
                 return product;
             }
@@ -43,10 +40,10 @@ public class Shop implements Building {
         return null;
     }
 
-    public ArrayList<Product> getProductsByType(ProductType type) {
-        ArrayList<Product> result = new ArrayList<>();
+    public Set<Product> getProductsByType(ProductType type) {
+        Set<Product> result = new HashSet<>(products.size());
 
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             if (product.getType().equals(type)) {
                 result.add(product);
             }
@@ -55,35 +52,43 @@ public class Shop implements Building {
         return result;
     }
 
-    public void removeProductById(int id) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id) {
-                products.remove(i);
+    public void removeProductById(int id, int countRemoving) {
+        Iterator<Product> iterator = products.keySet().iterator();
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getId() == id) {
+                if ((products.get(product) - countRemoving) >= 0) {
+                    products.compute(product, (_, v) -> v - countRemoving);
+                } else {
+                    products.put(product, 0);
+                }
+
                 break;
             }
         }
     }
 
     public void removeAllProductsById(int id) {
-        Iterator<Product> iterator = products.iterator();
+        Iterator<Product> iterator = products.keySet().iterator();
 
         while (iterator.hasNext()) {
             Product product = iterator.next();
             if (product.getId() == id) {
                 iterator.remove();
+                break;
             }
         }
     }
 
     public int countProductInShop(Product shopProduct) {
-        int count = 0;
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             if (product.getId() == shopProduct.getId()) {
-                count++;
+                return products.get(product);
             }
         }
 
-        return count;
+        return 0;
     }
 
     public Shop(String name) {

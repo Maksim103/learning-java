@@ -38,7 +38,7 @@ public class Seller extends EmployeeShop {
 
     private void sellProduct(Product product, int countProduct) {
         salesCount += countProduct;
-        getShop().removeProductById(product.getId());
+        getShop().removeProductById(product.getId(), countProduct);
 
         System.out.println(getName() + " продал " + product.getName() + " " +
                 "в кол-ве " + countProduct + " шт.! Всего продаж: " + salesCount);
