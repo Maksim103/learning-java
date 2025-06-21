@@ -21,8 +21,7 @@ public class Seller extends EmployeeShop {
 
     public void serviceShopper(Shopper shopper) {
         if (!shopper.isInShop() || !shopper.getShop().equals(getShop())) {
-            System.out.println(shopper.getName() + " - не в " + getShop().getName());
-            return;
+            throw new PersonNotInShopException(shopper.getName() + " - не в " + getShop().getName());
         }
 
         Map<Product, Integer> shopperProducts = shopper.getAllProducts();
