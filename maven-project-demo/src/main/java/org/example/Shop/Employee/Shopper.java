@@ -82,7 +82,7 @@ public class Shopper extends Person {
             products.computeIfPresent(product, (_, v) -> v + countProduct);
             products.putIfAbsent(product, countProduct);
         } else {
-            System.out.println(getName() + " нехватает денег для покупки " + product.getName() + " в кол-ве " + countProduct);
+            throw new NoMoneyException(getName() + " нехватает денег для покупки " + product.getName() + " в кол-ве " + countProduct);
         }
     }
 
