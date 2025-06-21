@@ -34,6 +34,15 @@ public abstract class EmployeeShop extends Person implements Employee {
         return shop;
     }
 
+    public void setShop(Shop shop) {
+        if (this.shop != null) {
+            System.out.println("Сначала надо выйти из магазина");
+            return;
+        }
+
+        this.shop = shop;
+    }
+
     @Override
     public void setPosition(PositionType position) {
         this.position = position;
