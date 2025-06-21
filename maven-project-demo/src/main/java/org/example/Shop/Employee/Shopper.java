@@ -12,8 +12,7 @@ public class Shopper extends Person {
     private int money;
     private Shop shop;
     private boolean isInShop;
-
-    private final ArrayList<Product> products = new ArrayList<>();
+    private final Map<Product, Integer> products = new HashMap<>();
 
     public boolean isInShop() {
         return isInShop;
@@ -23,7 +22,7 @@ public class Shopper extends Person {
         return shop;
     }
 
-    public ArrayList<Product> getProducts() {
+    public Map<Product, Integer> getProducts() {
         return products;
     }
 
@@ -80,9 +79,8 @@ public class Shopper extends Person {
         if ((int) Math.round(product.getPrice()*countProduct) <= money) {
             money -= (int) Math.round(product.getPrice()*countProduct);
 
-            for (int i = 0; i < countProduct; i++) {
-                products.add(product);
-            }
+            products.computeIfPresent(product, (k, v) -> v + countProduct);
+            products.putIfAbsent(product, countProduct);
         } else {
             System.out.println(getName() + " нехватает денег для покупки " + product.getName() + " в кол-ве " + countProduct);
         }
@@ -112,10 +110,10 @@ public class Shopper extends Person {
     }
 
     public void removeProductById(int id) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id) {
-                money += (int) products.get(i).getPrice();
-                products.remove(i);
+        for (Product product: products.keySet()) {
+            if (product.getId() == id) {
+                money += (int) product.getPrice();
+                products.remove(product);
                 break;
             }
         }
@@ -130,17 +128,17 @@ public class Shopper extends Person {
     }
 
     public void viewListProducts() {
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             System.out.println(product);
         }
     }
 
-    public ArrayList<Product> getAllProducts() {
+    public Map<Product, Integer> getAllProducts() {
         return products;
     }
 
     public Product getProductById(int id) {
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             if (product.getId() == id) {
                 return product;
             }
@@ -149,10 +147,10 @@ public class Shopper extends Person {
         return null;
     }
 
-    public ArrayList<Product> getProductsByType(ProductType type) {
-        ArrayList<Product> result = new ArrayList<>();
+    public Set<Product> getProductsByType(ProductType type) {
+        Set<Product> result = new HashSet<>(products.size());
 
-        for (Product product : products) {
+        for (Product product : products.keySet()) {
             if (product.getType().equals(type)) {
                 result.add(product);
             }
