@@ -11,7 +11,6 @@ public abstract class EmployeeShop extends Person implements Employee {
     private int workHours;
     private boolean isWorked;
     private int extraWorkingHours;
-
     private Shop shop;
 
     {
@@ -95,6 +94,10 @@ public abstract class EmployeeShop extends Person implements Employee {
 
     @Override
     public void work(int workingHours) {
+        if (shop == null) {
+            throw new PersonNotInShopException(getName() + " не в магазине");
+        }
+
         if (workingHours == workHours) {
             System.out.println("Отлично! " + getName() + " отработал свои часы");
             isWorked = true;
