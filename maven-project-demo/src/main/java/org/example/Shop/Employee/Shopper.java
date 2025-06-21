@@ -49,8 +49,7 @@ public class Shopper extends Person {
 
     public void leaveShop() {
         if (!isInShop) {
-            System.out.println(getName() + " и так не в магазине");
-            return;
+            throw new PersonNotInShopException(getName() + " и так не в магазине");
         }
 
         if (!products.isEmpty()) {
@@ -64,8 +63,7 @@ public class Shopper extends Person {
 
     public void buyProduct(Product product, int countProduct) {
         if (!isInShop) {
-            System.out.println("Сначала надо сходить в магазин");
-            return;
+            throw new PersonNotInShopException(getName() + " сначала сходи в магазин");
         }
 
         if (!checkProductInShop(product)) {
