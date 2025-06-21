@@ -55,8 +55,7 @@ public class Seller extends EmployeeShop {
             return getSalary() + getExtraWorkingHours()*50 + (salesCount*5);
         }
 
-        System.out.println(getName() + " ещё не отработал свои часы!");
-        return 0;
+        throw new NotWorkHoursException(getName() + " ещё не отработал свои часы");
     }
 
     @Override

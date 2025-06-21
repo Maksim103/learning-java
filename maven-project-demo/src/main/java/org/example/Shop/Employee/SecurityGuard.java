@@ -1,6 +1,7 @@
 package org.example.Shop.Employee;
 
 import org.example.Shop.Building.Shop;
+import org.example.Shop.Exceptions.NotWorkHoursException;
 import org.example.Shop.People.GenderType;
 
 public class SecurityGuard extends EmployeeShop {
@@ -18,7 +19,6 @@ public class SecurityGuard extends EmployeeShop {
             return getSalary() + getExtraWorkingHours()*100;
         }
 
-        System.out.println(getName() + " ещё не отработал свои часы!");
-        return 0;
+        throw new NotWorkHoursException(getName() + " ещё не отработал свои часы");
     }
 }
