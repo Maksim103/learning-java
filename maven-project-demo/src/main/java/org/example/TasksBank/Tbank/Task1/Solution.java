@@ -91,10 +91,10 @@ public class Solution {
         return finalSum - initialSum;
     }
 
-    public static long changeDigit(long num, int k, int newDigit) {
-        k = (int) Math.pow(10, k);
+    public static long changeDigit(long num, long k, int newDigit) {
+        k = (long) Math.pow(10, k);
         double saved = num % k;
         num = num - (num % (k * 10L));
-        return ((int) (num + (newDigit * k) + saved));
+        return ((long) (num + ((long) newDigit * k) + saved));
     }
 }
