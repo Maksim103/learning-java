@@ -1,4 +1,4 @@
-package org.example.Tasks.StreamTasks;
+package org.example.Tasks.FunctionTasks;
 
 import java.util.Objects;
 import java.util.function.Function;
