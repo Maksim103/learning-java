@@ -67,7 +67,7 @@ public class OptionalTask {
 
     public static Optional<Purchase> findFirst(ArrayList<Purchase> list, Predicate<Purchase> filter) {
         Purchase result = null;
-        for (Purchase purchase: list) {
+        for (Purchase purchase : list) {
             if (filter.test(purchase)) {
                 result = purchase;
                 break;
