@@ -1,4 +1,4 @@
-package org.example.Multithreading;
+package org.example.Multithreading.Examples;
 
 public class SynchronizedMethod {
     public static void main(String[] args) {
